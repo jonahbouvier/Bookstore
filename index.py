@@ -51,7 +51,7 @@ class BookApp:
 
         # Label for My Library
         library_label = tk.Label(self.library_frame, text="My Library", font=("Helvetica", 16, "bold"))
-        library_label.grid(row=0, column=2, sticky="n", pady=5)
+        library_label.grid(row=0, column=0, sticky="w", pady=5)
 
         # Create book list
         self.create_book_list()
@@ -63,7 +63,7 @@ class BookApp:
         for book in book_data:
             book_info = f"{book.title} by {book.author} - {book.genre}"
             book_label = tk.Label(self.catalog_frame, text=book_info)
-            book_label.grid(row=book_data.index(book), column=0, sticky="w")
+            book_label.grid(sticky="w")
 
             add_button = tk.Button(self.catalog_frame, text="Add to Library", command=lambda b=book: self.add_to_library(b))
             add_button.grid(row=book_data.index(book) + 1, column=1, padx=(10, 0), sticky="e")
@@ -85,6 +85,10 @@ class BookApp:
             widget.destroy()
 
         # Display updated library
+        # Label for My Library
+        library_label = tk.Label(self.library_frame, text="My Library", font=("Helvetica", 16, "bold"))
+        library_label.pack(side=tk.TOP, pady=5)
+
         for book in self.library_books:
             library_label = tk.Label(self.library_frame, text=f"{book.title} by {book.author} - {book.genre}")
             library_label.pack()
