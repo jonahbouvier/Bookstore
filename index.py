@@ -68,7 +68,18 @@ class BookApp:
             add_button = tk.Button(self.catalog_frame, text="Add to Library", command=lambda b=book: self.add_to_library(b))
             add_button.grid(row=book_data.index(book) + 1, column=1, padx=(10, 0), sticky="e")
 
+    def add_to_library(self, book):
+        if book.in_library:
+            messagebox.showinfo("Info", f"{book.title} is already in your library.")
+        else:
+            book.in_library = True
+            self.library_books.append(book)
+            messagebox.showinfo("Success", f"{book.title} added to your library.")
 
+        # Refresh library display
+        self.display_library()
+
+   
 
 # Main function
 if __name__ == "__main__":
