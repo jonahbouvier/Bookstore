@@ -79,7 +79,19 @@ class BookApp:
         # Refresh library display
         self.display_library()
 
-   
+    def display_library(self):
+        # Clear previous library display
+        for widget in self.library_frame.winfo_children():
+            widget.destroy()
+
+        # Display updated library
+        # Label for My Library
+        library_label = tk.Label(self.library_frame, text="My Library", font=("Helvetica", 16, "bold"))
+        library_label.pack(side=tk.TOP, pady=5)
+
+        for book in self.library_books:
+            library_label = tk.Label(self.library_frame, text=f"{book.title} by {book.author} - {book.genre}")
+            library_label.pack()
 
 # Main function
 if __name__ == "__main__":
