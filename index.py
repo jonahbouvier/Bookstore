@@ -9,7 +9,24 @@ class Book:
         self.in_library = False
 
 # Sample book data
-book_data = []
+book_data = [
+    Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "Fantasy"),
+    Book("A Song of Ice and Fire: A Game of Thrones", "George R.R. Martin", "Fantasy"),
+    Book("To Kill a Mockingbird", "Harper Lee", "Fiction"),
+    Book("1984", "George Orwell", "Dystopian"),
+    Book("The Great Gatsby", "F. Scott Fitzgerald", "Classic"),
+    Book("The Catcher in the Rye", "J.D. Salinger", "Fiction"),
+    Book("The Lord of the Rings: The Fellowship of the Ring", "J.R.R. Tolkien", "Fantasy"),
+    Book("Pride and Prejudice", "Jane Austen", "Romance"),
+    Book("The Chronicles of Narnia: The Lion, the Witch and the Wardrobe", "C.S. Lewis", "Fantasy"),
+    Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"),
+    Book("Brave New World", "Aldous Huxley", "Dystopian"),
+    Book("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", "Science Fiction"),
+    Book("The Da Vinci Code", "Dan Brown", "Mystery"),
+    Book("The Girl with the Dragon Tattoo", "Stieg Larsson", "Thriller"),
+    Book("The Hunger Games", "Suzanne Collins", "Dystopian"),
+    # Add more books as needed
+]
 
 class BookApp:
     def __init__(self, root):
@@ -51,7 +68,8 @@ class BookApp:
             add_button = tk.Button(self.catalog_frame, text="Add to Library", command=lambda b=book: self.add_to_library(b))
             add_button.grid(row=book_data.index(book) + 1, column=1, padx=(10, 0), sticky="e")
 
-    
+
+
 # Main function
 if __name__ == "__main__":
     root = tk.Tk()
