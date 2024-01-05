@@ -10,21 +10,21 @@ class Book:
 
 # Sample book data
 book_data = [
-    Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", "Fantasy"),
-    Book("A Song of Ice and Fire: A Game of Thrones", "George R.R. Martin", "Fantasy"),
-    Book("To Kill a Mockingbird", "Harper Lee", "Fiction"),
-    Book("1984", "George Orwell", "Dystopian"),
-    Book("The Great Gatsby", "F. Scott Fitzgerald", "Classic"),
-    Book("The Catcher in the Rye", "J.D. Salinger", "Fiction"),
-    Book("The Lord of the Rings: The Fellowship of the Ring", "J.R.R. Tolkien", "Fantasy"),
-    Book("Pride and Prejudice", "Jane Austen", "Romance"),
-    Book("The Chronicles of Narnia: The Lion, the Witch and the Wardrobe", "C.S. Lewis", "Fantasy"),
-    Book("The Hobbit", "J.R.R. Tolkien", "Fantasy"),
-    Book("Brave New World", "Aldous Huxley", "Dystopian"),
-    Book("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", "Science Fiction"),
-    Book("The Da Vinci Code", "Dan Brown", "Mystery"),
-    Book("The Girl with the Dragon Tattoo", "Stieg Larsson", "Thriller"),
-    Book("The Hunger Games", "Suzanne Collins", "Dystopian"),
+    Book("Title": "Harry Potter and the Sorcerer's Stone",                              "Author": "J.K. Rowling",           "Genre": "Fantasy"),
+    Book("Title": "A Song of Ice and Fire: A Game of Thrones",                          "Author": "George R.R. Martin",     "Genre": "Fantasy"),
+    Book("Title": "To Kill a Mockingbird",                                              "Author": "Harper Lee",             "Genre": "Fiction"),
+    Book("Title": "1984",                                                               "Author": "George Orwell",          "Genre": "Dystopian"),
+    Book("Title": "The Great Gatsby",                                                   "Author": "F. Scott Fitzgerald",    "Genre": "Classic"),
+    Book("Title": "The Catcher in the Rye",                                             "Author": "J.D. Salinger",          "Genre": "Fiction"),
+    Book("Title": "The Lord of the Rings: The Fellowship of the Ring",                  "Author": "J.R.R. Tolkien",         "Genre": "Fantasy"),
+    Book("Title": "Pride and Prejudice",                                                "Author": "Jane Austen",            "Genre": "Romance"),
+    Book("Title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",     "Author": "C.S. Lewis",             "Genre": "Fantasy"),
+    Book("Title": "The Hobbit",                                                         "Author": "J.R.R. Tolkien",         "Genre": "Fantasy"),
+    Book("Title": "Brave New World",                                                    "Author": "Aldous Huxley",          "Genre": "Dystopian"),
+    Book("Title": "The Hitchhiker's Guide to the Galaxy",                               "Author": "Douglas Adams",          "Genre": "Science Fiction"),
+    Book("Title": "The Da Vinci Code",                                                  "Author": "Dan Brown",              "Genre": "Mystery"),
+    Book("Title": "The Girl with the Dragon Tattoo",                                    "Author": "Stieg Larsson",          "Genre": "Thriller"),
+    Book("Title": "The Hunger Games",                                                   "Author": "Suzanne Collins",        "Genre": "Dystopian"),
     # Add more books as needed
 ]
 
