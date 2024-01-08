@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, StringVar, OptionMenu, Button, Label
 
 class Book:
     def __init__(self, title, author, genre):
@@ -48,6 +48,12 @@ class BookApp:
         # Label for Book Catalog
         catalog_label = tk.Label(self.catalog_frame, text="Book Catalog", font=("Helvetica", 16, "bold"))
         catalog_label.grid(row=0, column=0, sticky="w", pady=5)
+        
+        # Dropdown menu for Catalog Sorting
+        clicked = StringVar()
+        clicked.set("Title")
+        drop = OptionMenu(root, clicked, "Title", "Genre", "Author")
+        drop.pack()
 
         # Label for My Library
         library_label = tk.Label(self.library_frame, text="My Library", font=("Helvetica", 16, "bold"))
