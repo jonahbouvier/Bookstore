@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import messagebox, StringVar, OptionMenu, Button, Label
 
 class Book:
     def __init__(self, title, author, genre):
@@ -50,8 +50,8 @@ class BookApp:
         catalog_label.grid(row=0, column=0, sticky="w", pady=5)
 
         # Label for Sort Menu
-        #sort_label = tk.Label(self.catalog_frame, text="Sort By", font=("Helvetica", 16, "bold"))
-        #catalog_label.grid(row=0, column=0, sticky="w", pady=5)
+        sort_label = tk.Label(self.catalog_frame, text="Book Catalog", font=("Helvetica", 16, "bold"))
+        catalog_label.grid(row=0, column=0, sticky="w", pady=5)
         
         # Dropdown menu for Catalog Sorting
         clicked = StringVar()
@@ -105,11 +105,11 @@ class BookApp:
 
     def add_to_library(self, book):
         if book.in_library:
-            ttk.showinfo("Info", f"{book.title} is already in your library.")
+            messagebox.showinfo("Info", f"{book.title} is already in your library.")
         else:
             book.in_library = True
             self.library_books.append(book)
-            ttk.showinfo("Success", f"{book.title} added to your library.")
+            messagebox.showinfo("Success", f"{book.title} added to your library.")
 
         # Refresh library display
         self.display_library()
