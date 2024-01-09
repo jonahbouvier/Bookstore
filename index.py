@@ -48,6 +48,27 @@ class BookApp:
         # Label for Book Catalog
         catalog_label = tk.Label(self.catalog_frame, text="Book Catalog", font=("Helvetica", 16, "bold"))
         catalog_label.grid(row=0, column=0, sticky="w", pady=5)
+<<<<<<< Updated upstream
+=======
+
+        # Label for Sort Menu
+        #sort_label = tk.Label(self.catalog_frame, text="Sort By", font=("Helvetica", 16, "bold"))
+        #catalog_label.grid(row=0, column=0, sticky="w", pady=5)
+        
+        # Dropdown menu for Catalog Sorting
+        clicked = StringVar()
+        clicked.set("Title")
+        drop = OptionMenu(root, clicked, "Title", "Genre", "Author")
+        drop.pack()
+        # Dropdown menu to sort the catalog
+        #sort_options = ["Title", "Author", "Genre"]
+        #self.sort_variable = StringVar()
+        #self.sort_variable.set(sort_options[0])  # Default sorting by Title
+
+        #sort_dropdown = OptionMenu(self.catalog_frame, self.sort_variable, *sort_options)
+        #sort_dropdown.grid(row=0, column=1, pady=5, padx=10, sticky="w")
+        #sort_dropdown.bind("<Configure>", self.sort_catalog)
+>>>>>>> Stashed changes
 
         # Label for My Library
         library_label = tk.Label(self.library_frame, text="My Library", font=("Helvetica", 16, "bold"))
@@ -58,6 +79,23 @@ class BookApp:
 
         # Create library list
         self.library_books = []
+
+    def sort_catalog(self, event):
+        # Get the selected sorting option
+        selected_option = self.sort_variable.get()
+
+        # Sort the book catalog based on the selected option
+        if selected_option == "Title":
+            book_data.sort(key=lambda x: x.title)
+        elif selected_option == "Author":
+            book_data.sort(key=lambda x: x.author)
+        elif selected_option == "Genre":
+            book_data.sort(key=lambda x: x.genre)
+
+        # Clear and recreate the book list with the sorted data
+        for widget in self.catalog_frame.winfo_children():
+            widget.destroy()
+        self.create_book_list()
 
     def create_book_list(self):
         for book in book_data:
