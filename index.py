@@ -28,6 +28,17 @@ book_data = [
     # Add more books as needed
 ]
 
+genre_count = {
+    "Fantasy": 0,
+    "Fiction": 0,
+    "Dystopian": 0,
+    "Classic": 0,
+    "Romance": 0,
+    "Science Fiction": 0,
+    "Mystery": 0,
+    "Dystopian": 0
+}
+
 class BookApp:
     def __init__(self, root):
         self.root = root
