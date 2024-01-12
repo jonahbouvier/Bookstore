@@ -76,6 +76,11 @@ class BookApp:
         # Create library list
         self.library_books = []
 
+    
+    def count_genres(self):
+        for book in book_data:
+            genre_count[book.genre] += 1
+
     def create_book_list(self):
         for book in book_data:
             book_info = f"{book.title} by {book.author} - {book.genre}"
