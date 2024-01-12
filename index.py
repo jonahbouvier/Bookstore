@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox, StringVar, OptionMenu, Button, Label
+from tkinter import messagebox, StringVar, OptionMenu, Button, Label, StringVar, OptionMenu, Button, Label
 
 class Book:
     def __init__(self, title, author, genre):
@@ -27,6 +27,17 @@ book_data = [
     Book("The Hunger Games", "Suzanne Collins", "Dystopian"),
     # Add more books as needed
 ]
+
+genre_count = {
+    "Fantasy": 0,
+    "Fiction": 0,
+    "Dystopian": 0,
+    "Classic": 0,
+    "Romance": 0,
+    "Science Fiction": 0,
+    "Mystery": 0,
+    "Dystopian": 0
+}
 
 class BookApp:
     def __init__(self, root):
@@ -58,6 +69,7 @@ class BookApp:
         clicked.set("Title")
         drop = OptionMenu(root, clicked, "Title", "Genre", "Author")
         drop.pack()
+
         # Dropdown menu to sort the catalog
         #sort_options = ["Title", "Author", "Genre"]
         #self.sort_variable = StringVar()
@@ -93,6 +105,11 @@ class BookApp:
         for widget in self.catalog_frame.winfo_children():
             widget.destroy()
         self.create_book_list()
+
+    
+    def count_genres(self):
+        for book in book_data:
+            genre_count[book.genre] += 1
 
     def create_book_list(self):
         for book in book_data:
